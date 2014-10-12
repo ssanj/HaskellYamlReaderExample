@@ -7,6 +7,7 @@ import Data.Aeson
 
 
 data Cred = Cred { username :: String, password :: String } deriving (Show, Generic)
+instance FromJSON Cred
 
 main :: IO ()
 main = do
@@ -15,5 +16,3 @@ main = do
     case parsedContent of
         Nothing -> error "Could not parse config file."
         (Just (Cred u p)) -> putStrLn ("username: " ++ u ++ ", password: " ++ p)
-
-instance FromJSON Cred
