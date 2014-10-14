@@ -6,6 +6,7 @@
 
     cabal update
     cabal init sandbox
+    cabal install --only-dependencies
     cabal configure
     cabal run
 
